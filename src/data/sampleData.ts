@@ -231,12 +231,12 @@ export const sampleProjects: Project[] = [
 ];
 
 
-/* =======================
+   /* =======================
    HR QUESTIONS
    ======================= */
 
 export const sampleHRQuestions: HRQuestion[] = [
-   {
+  {
     id: 'hr-1',
     question: 'Tell me about yourself',
     answer:
@@ -251,545 +251,129 @@ export const sampleHRQuestions: HRQuestion[] = [
       'My greatest strength is problem-solving and logical thinking.',
     category: 'hr',
     createdAt: new Date().toISOString(),
-  },
-  {
-    id: '1',
-    question: 'What is React.js?',
-    answer:
-      'React is a JavaScript library used to build fast and interactive user interfaces using components and a virtual DOM.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    question: 'Difference between React and JavaScript?',
-    answer:
-      'JavaScript is a general-purpose programming language, while React is a JavaScript library used to build UI components and manage state efficiently.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '3',
-    question: 'React is a component-based library — explain.',
-    answer:
-      'React breaks the UI into small reusable components, making the code maintainable, scalable, and easy to debug.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '4',
-    question: 'What kind of components are supported in React?',
-    answer:
-      'React supports Functional components and Class components.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '5',
-    question: 'What is a functional component?',
-    answer:
-      'A functional component is a JavaScript function that returns JSX and uses hooks for state and lifecycle management.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '6',
-    question: 'What is a class component?',
-    answer:
-      'A class component is written using ES6 classes and manages state using this.state and lifecycle methods.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '7',
-    question: 'Difference between functional and class components.',
-    answer:
-      'Functional components are simpler and use hooks, while class components use lifecycle methods. Functional components are recommended in modern React.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '8',
-    question: 'What are hooks in React?',
-    answer:
-      'Hooks are functions that allow functional components to use state, lifecycle, and other React features.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '9',
-    question: 'What is useState and its advantages?',
-    answer:
-      'useState is a hook used to manage state in functional components. It is simple, clean, and avoids class components.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '10',
-    question: 'Features of React.js',
-    answer:
-      'Component-based architecture, Virtual DOM, One-way data flow, Hooks, Fast rendering, and a strong ecosystem.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '11',
-    question: 'How to start a React application?',
-    answer:
-      'By using tools like Create React App or Vite to bootstrap a new React project.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '12',
-    question: 'Can we create a React app without create-react-app?',
-    answer:
-      'Yes, using tools like Vite, Webpack, Parcel, Next.js, or manual bundler setup.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '13',
-    question: 'What is JSX?',
-    answer:
-      'JSX stands for JavaScript XML and allows writing HTML-like syntax inside JavaScript.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '14',
-    question: 'What is middleware in React?',
-    answer:
-      'React itself has no middleware. Middleware is used in state management tools like Redux for handling async logic.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '15',
-    question: 'How does React handle concurrency?',
-    answer:
-      'React 18 uses Concurrent Mode and Fiber architecture to improve performance and avoid blocking UI updates.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '16',
-    question: 'What is Virtual DOM?',
-    answer:
-      'A lightweight JavaScript representation of the real DOM that React updates efficiently.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '17',
-    question: 'What is reconciliation in React?',
-    answer:
-      'The process where React compares old and new Virtual DOM trees and updates only the changed parts.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '18',
-    question: 'Advantages of React',
-    answer:
-      'Fast UI updates, reusable components, large community support, SEO-friendly frameworks, and easy state management.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '19',
-    question: 'Can we use relational & non-relational databases with React?',
-    answer:
-      'React is frontend-only and interacts with databases through backend APIs.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '20',
-    question: 'What is React DevTools?',
-    answer:
-      'A browser extension used to inspect React components, props, state, and performance.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '21',
-    question: 'Name built-in hooks of React',
-    answer:
-      'useState, useEffect, useRef, useMemo, useCallback, useContext, useReducer, useLayoutEffect, useImperativeHandle, useDebugValue.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '22',
-    question: 'What is package.json in a React project?',
-    answer:
-      'It stores project metadata, dependencies, scripts, and configuration.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '23',
-    question: 'How to write Hello World in React?',
-    answer:
-      'By creating a functional component that returns JSX with Hello World text.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '24',
-    question: 'Why do we use JSX?',
-    answer:
-      'JSX improves readability, avoids manual React.createElement calls, and speeds up development.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '25',
-    question: 'What are promises in React?',
-    answer:
-      'Promises handle asynchronous operations such as API calls, often used inside useEffect.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '26',
-    question: 'What is event-driven programming in React?',
-    answer:
-      'React listens to user events like click and submit and triggers callback functions.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '27',
-    question: 'What is the use of useEffect?',
-    answer:
-      'useEffect is used to handle side effects like API calls, timers, subscriptions, and DOM updates.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '28',
-    question: 'What are streams in React?',
-    answer:
-      'React does not support streams directly. Streaming is used in frameworks like Next.js for SSR.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '29',
-    question: 'What is a callback function?',
-    answer:
-      'A function passed as an argument to another function, commonly used in event handlers.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '30',
-    question: 'Use of router modules in React',
-    answer:
-      'React Router enables navigation between pages without reloading the browser.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '31',
-    question: 'What are controlled components?',
-    answer:
-      'Components where form input values are controlled by React state.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '32',
-    question: 'What are uncontrolled components?',
-    answer:
-      'Components where form data is handled by the DOM using refs.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '33',
-    question: 'What is Context API?',
-    answer:
-      'A global state management solution to avoid prop drilling.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '34',
-    question: 'What is Redux model in React?',
-    answer:
-      'Redux uses a central store to manage global state using actions and reducers.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '35',
-    question: 'How can we implement CRUD in React?',
-    answer:
-      'By using API calls with HTTP methods like POST, GET, PUT, and DELETE.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '36',
-    question: 'Explain the process of file uploading in React',
-    answer:
-      'Using file input, storing the file in state, and sending it to the backend via FormData.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '37',
-    question: 'Which packages are used for mail in React?',
-    answer:
-      'React uses services like EmailJS or backend APIs to send emails.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '38',
-    question: 'How can we connect database with React?',
-    answer:
-      'React connects to databases through backend APIs, not directly.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '39',
-    question: 'How to handle environment variables in React?',
-    answer:
-      'By using .env files and accessing variables via process.env.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '40',
-    question: 'Which packages are used for password encryption in React?',
-    answer:
-      'Password encryption is handled in the backend using libraries like bcrypt.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '41',
-    question: 'Folder structure of React',
-    answer:
-      'A common structure includes src with components, pages, hooks, App.js, index.js, and public folder.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '42',
-    question: 'What are props?',
-    answer:
-      'Props are read-only data passed from parent to child components.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '43',
-    question: 'Difference between query params and route params?',
-    answer:
-      'Query params appear after ? while route params are part of the URL path.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '44',
-    question: 'How to implement Google Auth in React?',
-    answer:
-      'Using services like Firebase Auth, Google Identity Services, or Auth0.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '45',
-    question: 'What is WebSocket in React?',
-    answer:
-      'A real-time communication protocol used for chat, notifications, and live updates.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '46',
-    question: 'How can we manage session in React?',
-    answer:
-      'Using cookies, localStorage, sessionStorage, JWT tokens, or global state.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '47',
-    question: 'Why do we use axios or fetch?',
-    answer:
-      'They simplify API calls, error handling, and JSON conversion.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '48',
-    question: 'How to implement search functionality in React?',
-    answer:
-      'By storing input in state and filtering data based on the search query.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '49',
-    question: 'How to sort data in React?',
-    answer:
-      'By using the JavaScript sort method before rendering the list.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-1',
-    question: 'What is Node.js?',
-    answer:
-      'Node.js is a runtime environment that allows JavaScript to run on the server side. It is built on Chrome’s V8 engine.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-2',
-    question: 'Difference between Node.js and JavaScript?',
-    answer:
-      'JavaScript runs in the browser, while Node.js runs on the server and can access files, databases, and servers.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-3',
-    question: 'How does Node.js handle concurrency if it is single-threaded?',
-    answer:
-      'Node.js uses an event loop and non-blocking I/O to handle multiple requests asynchronously.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-4',
-    question: 'What types of API functions are supported in Node.js?',
-    answer:
-      'Node.js supports synchronous (blocking) and asynchronous (non-blocking) API functions.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-5',
-    question: 'What is a synchronous function?',
-    answer:
-      'A synchronous function blocks execution until the current task is completed.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-6',
-    question: 'What is an asynchronous function?',
-    answer:
-      'An asynchronous function executes tasks in the background without blocking the main thread.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-7',
-    question: 'Difference between Promise and Async/Await',
-    answer:
-      'Promises use then/catch syntax, while async/await provides cleaner and more readable syntax.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-8',
-    question: 'What is a module in Node.js?',
-    answer:
-      'A module is a reusable block of code that can be imported using require() or import.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-9',
-    question: 'What is npm and its advantage?',
-    answer:
-      'npm is the Node Package Manager used to install and manage dependencies with a huge package ecosystem.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-10',
-    question: 'Features of Node.js',
-    answer:
-      'Non-blocking I/O, event-driven architecture, fast execution, scalability, and cross-platform support.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-11',
-    question: 'What is Express.js?',
-    answer:
-      'Express.js is a lightweight Node.js framework used to build web servers and REST APIs.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-12',
-    question: 'What is middleware in Node.js?',
-    answer:
-      'Middleware is a function that runs between the request and response to process logic like auth or logging.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-13',
-    question: 'What is the Event Loop in Node.js?',
-    answer:
-      'The event loop manages asynchronous callbacks and executes them without blocking the main thread.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-14',
-    question: 'What are streams in Node.js?',
-    answer:
-      'Streams are used to handle continuous data flow, such as file streaming or large uploads.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-15',
-    question: 'What is callback hell?',
-    answer:
-      'Callback hell occurs when multiple nested callbacks make code difficult to read and maintain.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-16',
-    question: 'Which package is used for sending emails in Node.js?',
-    answer:
-      'nodemailer is commonly used to send emails in Node.js applications.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-17',
-    question: 'How to handle environment variables in Node.js?',
-    answer:
-      'Environment variables are stored in a .env file and accessed using the dotenv package.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: 'node-18',
-    question: 'Which package is used for password encryption?',
-    answer:
-      'bcrypt or bcryptjs is used to securely hash passwords.',
-    category: 'technical',
-    createdAt: new Date().toISOString()
   }
-
 ];
+
+/* =======================
+   TECHNICAL QnA (FULL)
+   ======================= */
+
+export const sampleTechnicalQnA = [
+  /* =======================
+     REACT QUESTIONS (49)
+     ======================= */
+  {
+    tech: 'React',
+    questions: [
+      { id: 'react-1', question: 'What is React.js?', answer: 'React is a JavaScript library used to build fast and interactive user interfaces using components and a virtual DOM.' },
+      { id: 'react-2', question: 'Difference between React and JavaScript?', answer: 'JavaScript is a programming language, while React is a JavaScript library for building UI components.' },
+      { id: 'react-3', question: 'React is a component-based library — explain.', answer: 'React breaks UI into reusable components making apps scalable and maintainable.' },
+      { id: 'react-4', question: 'What kind of components are supported in React?', answer: 'React supports Functional and Class components.' },
+      { id: 'react-5', question: 'What is a functional component?', answer: 'A JavaScript function that returns JSX and uses hooks.' },
+      { id: 'react-6', question: 'What is a class component?', answer: 'An ES6 class that extends React.Component and uses lifecycle methods.' },
+      { id: 'react-7', question: 'Difference between functional and class components.', answer: 'Functional components use hooks and are simpler; class components use lifecycle methods.' },
+      { id: 'react-8', question: 'What are hooks in React?', answer: 'Hooks let functional components use state and lifecycle features.' },
+      { id: 'react-9', question: 'What is useState?', answer: 'A hook used to manage state in functional components.' },
+      { id: 'react-10', question: 'Features of React.js', answer: 'Virtual DOM, components, one-way data flow, hooks, fast rendering.' },
+      { id: 'react-11', question: 'How to start a React application?', answer: 'Using Create React App or Vite.' },
+      { id: 'react-12', question: 'Can we create React app without CRA?', answer: 'Yes, using Vite, Webpack, Parcel, or Next.js.' },
+      { id: 'react-13', question: 'What is JSX?', answer: 'JSX allows writing HTML-like syntax inside JavaScript.' },
+      { id: 'react-14', question: 'What is middleware in React?', answer: 'React has no middleware; Redux uses middleware.' },
+      { id: 'react-15', question: 'How does React handle concurrency?', answer: 'React 18 uses Fiber and concurrent rendering.' },
+      { id: 'react-16', question: 'What is Virtual DOM?', answer: 'A lightweight copy of real DOM used for efficient updates.' },
+      { id: 'react-17', question: 'What is reconciliation?', answer: 'React compares old and new Virtual DOM to update UI efficiently.' },
+      { id: 'react-18', question: 'Advantages of React', answer: 'Fast rendering, reusable components, strong ecosystem.' },
+      { id: 'react-19', question: 'Can React connect to database directly?', answer: 'No, React uses backend APIs.' },
+      { id: 'react-20', question: 'What is React DevTools?', answer: 'Browser extension for inspecting React components.' },
+      { id: 'react-21', question: 'Built-in hooks of React?', answer: 'useState, useEffect, useRef, useContext, etc.' },
+      { id: 'react-22', question: 'What is package.json?', answer: 'Manages dependencies and scripts.' },
+      { id: 'react-23', question: 'Hello World in React?', answer: 'A component returning JSX with Hello World.' },
+      { id: 'react-24', question: 'Why JSX?', answer: 'Improves readability and developer experience.' },
+      { id: 'react-25', question: 'What are promises?', answer: 'Used for handling async operations.' },
+      { id: 'react-26', question: 'Event-driven programming?', answer: 'UI updates based on user actions.' },
+      { id: 'react-27', question: 'useEffect use?', answer: 'Handling side effects like API calls.' },
+      { id: 'react-28', question: 'Streams in React?', answer: 'Not supported directly.' },
+      { id: 'react-29', question: 'What is callback?', answer: 'Function passed as argument.' },
+      { id: 'react-30', question: 'React Router use?', answer: 'Client-side routing.' },
+      { id: 'react-31', question: 'Controlled components?', answer: 'Form elements controlled by state.' },
+      { id: 'react-32', question: 'Uncontrolled components?', answer: 'Form handled by DOM refs.' },
+      { id: 'react-33', question: 'Context API?', answer: 'Global state management.' },
+      { id: 'react-34', question: 'Redux model?', answer: 'Centralized store with actions and reducers.' },
+      { id: 'react-35', question: 'CRUD in React?', answer: 'Using APIs with HTTP methods.' },
+      { id: 'react-36', question: 'File upload process?', answer: 'Using input type file and FormData.' },
+      { id: 'react-37', question: 'Mail packages?', answer: 'EmailJS or backend service.' },
+      { id: 'react-38', question: 'DB connection?', answer: 'Through backend APIs.' },
+      { id: 'react-39', question: 'Env variables?', answer: 'Using .env files.' },
+      { id: 'react-40', question: 'Password encryption?', answer: 'Handled in backend.' },
+      { id: 'react-41', question: 'Folder structure?', answer: 'src, components, pages, hooks.' },
+      { id: 'react-42', question: 'Props?', answer: 'Read-only data passed to components.' },
+      { id: 'react-43', question: 'Query vs Route params?', answer: 'Query uses ?, route uses path.' },
+      { id: 'react-44', question: 'Google Auth?', answer: 'Firebase/Auth0.' },
+      { id: 'react-45', question: 'WebSocket?', answer: 'Real-time communication.' },
+      { id: 'react-46', question: 'Session management?', answer: 'JWT, cookies, storage.' },
+      { id: 'react-47', question: 'Axios vs fetch?', answer: 'Simplify API calls.' },
+      { id: 'react-48', question: 'Search in React?', answer: 'Filter state data.' },
+      { id: 'react-49', question: 'Sorting in React?', answer: 'Using JS sort before render.' },
+    ],
+  },
+
+  /* =======================
+     NODE.JS QUESTIONS (18)
+     ======================= */
+  {
+    tech: 'Node.js',
+    questions: [
+      { id: 'node-1', question: 'What is Node.js?', answer: 'Runtime environment for server-side JS.' },
+      { id: 'node-2', question: 'Node vs JS?', answer: 'JS runs in browser, Node runs on server.' },
+      { id: 'node-3', question: 'Concurrency in Node?', answer: 'Handled using event loop and async I/O.' },
+      { id: 'node-4', question: 'API types?', answer: 'Sync and async.' },
+      { id: 'node-5', question: 'Synchronous function?', answer: 'Blocks execution.' },
+      { id: 'node-6', question: 'Asynchronous function?', answer: 'Non-blocking execution.' },
+      { id: 'node-7', question: 'Promise vs async/await?', answer: 'Async/await is cleaner.' },
+      { id: 'node-8', question: 'What is module?', answer: 'Reusable code block.' },
+      { id: 'node-9', question: 'What is npm?', answer: 'Node package manager.' },
+      { id: 'node-10', question: 'Features of Node.js?', answer: 'Fast, scalable, non-blocking.' },
+      { id: 'node-11', question: 'Express.js?', answer: 'Node framework for APIs.' },
+      { id: 'node-12', question: 'Middleware?', answer: 'Runs between req-res.' },
+      { id: 'node-13', question: 'Event Loop?', answer: 'Handles async callbacks.' },
+      { id: 'node-14', question: 'Streams?', answer: 'Handle large data flow.' },
+      { id: 'node-15', question: 'Callback hell?', answer: 'Nested callbacks issue.' },
+      { id: 'node-16', question: 'Email package?', answer: 'nodemailer.' },
+      { id: 'node-17', question: 'Env variables?', answer: 'dotenv package.' },
+      { id: 'node-18', question: 'Password encryption?', answer: 'bcrypt.' },
+  { id: 'node-19', question: 'What is REPL?', answer: 'Interactive Node.js shell.' },
+  { id: 'node-20', question: 'Built-in modules?', answer: 'fs, http, path, os, crypto.' },
+  { id: 'node-21', question: 'What is package.json?', answer: 'Project metadata & dependencies.' },
+  { id: 'node-22', question: 'Why Express.js?', answer: 'Simplifies routing & APIs.' },
+  { id: 'node-23', question: 'Promises?', answer: 'Handle async operations.' },
+  { id: 'node-24', question: 'Event-driven programming?', answer: 'Execution based on events.' },
+  { id: 'node-25', question: 'What is Buffer?', answer: 'Stores binary data.' },
+  { id: 'node-26', question: 'Streams?', answer: 'Continuous data handling.' },
+  { id: 'node-27', question: 'fs module?', answer: 'File system operations.' },
+  { id: 'node-28', question: 'body-parser?', answer: 'Parses request body.' },
+  { id: 'node-29', question: 'CORS?', answer: 'Cross-origin request handling.' },
+  { id: 'node-30', question: 'CRUD operations?', answer: 'Create, Read, Update, Delete.' },
+  { id: 'node-31', question: 'File upload?', answer: 'multer package.' },
+  { id: 'node-32', question: 'Database connection?', answer: 'Using drivers or ORM.' },
+  { id: 'node-33', question: 'Session management?', answer: 'express-session.' },
+  { id: 'node-34', question: 'JWT?', answer: 'Token-based authentication.' },
+  { id: 'node-35', question: 'What is Mongoose?', answer: 'MongoDB ODM.' },
+  { id: 'node-36', question: 'Cluster module?', answer: 'Uses multiple CPU cores.' },
+  { id: 'node-37', question: 'req & res?', answer: 'Request and response objects.' },
+  { id: 'node-38', question: 'Query vs Route params?', answer: 'Filter vs identify resource.' },
+  { id: 'node-39', question: 'WebSocket?', answer: 'Real-time communication.' },
+  { id: 'node-40', question: 'Google Auth?', answer: 'OAuth authentication.' },
+  { id: 'node-41', question: 'Search in MongoDB?', answer: 'Regex matching.' },
+  { id: 'node-42', question: 'Count documents?', answer: 'countDocuments().' },
+  { id: 'node-43', question: 'What is REST API?', answer: 'Stateless client-server API.' },
+  { id: 'node-44', question: 'HTTP methods?', answer: 'GET, POST, PUT, DELETE.' },
+  { id: 'node-45', question: 'Rate limiting?', answer: 'Limit API requests.' },
+  { id: 'node-46', question: 'Error handling?', answer: 'try-catch & middleware.' }
+
+    ],
+  },
+];
+
 
 
 /* =======================
