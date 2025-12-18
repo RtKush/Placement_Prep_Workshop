@@ -64,10 +64,18 @@ export default function Notes() {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  const handleView = (pdf: PDFResource) => {
-    setSelectedPdf(pdf);
-    setViewerOpen(true);
-  };
+ const handleView = (pdf: PDFResource) => {
+  // Google Drive links → open in new tab
+  if (pdf.url.includes('drive.google.com')) {
+    window.open(pdf.url, '_blank');
+    return;
+  }
+
+  // Non-drive PDFs → open in viewer
+  setSelectedPdf(pdf);
+  setViewerOpen(true);
+};
+
 
   const handleDelete = (id: string) => {
     setPdfs(prev => prev.filter(pdf => pdf.id !== id));

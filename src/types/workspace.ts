@@ -7,6 +7,14 @@ export interface CodingProfile {
   createdAt: string;
 }
 
+
+export interface DSAWebSheet {
+  id: string;
+  name: string;
+  url: string;
+  createdAt: string;
+}
+ 
 export interface PDFResource {
   id: string;
   name: string;
@@ -28,15 +36,32 @@ export interface InterviewExperience {
   createdAt: string;
 }
 
+// export interface Project {
+//   id: string;
+//   name: string;
+//   description: string;
+//   techStack: string[];
+//   githubUrl?: string;
+//   liveUrl?: string;
+//   createdAt: string;
+// }
+
 export interface Project {
   id: string;
   name: string;
-  description: string;
   techStack: string[];
+
+  overview: string;
+  flow: string;
+  features: string;
+
   githubUrl?: string;
   liveUrl?: string;
+  youtubeUrl?: string;
+
   createdAt: string;
 }
+
 
 export interface HRQuestion {
   id: string;

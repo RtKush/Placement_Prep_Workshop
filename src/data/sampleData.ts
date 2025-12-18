@@ -91,26 +91,13 @@ export const sampleCodingProfiles: CodingProfile[] = [
    ======================= */
 
 export const samplePDFResources: PDFResource[] = [
-  {
-    id: '1',
-    name: 'Striver SDE Sheet',
-    category: 'dsa',
-    url: 'https://takeuforward.org/dsa/strivers-a2z-sheet-learn-dsa-a-to-z',
-    createdAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    name: 'Love Babbar DSA Sheet',
-    category: 'dsa',
-    url: 'https://450dsa.com/',
-    createdAt: new Date().toISOString()
-  },
+  
   {
     id: '3',
     name: 'DBMS Notes',
     category: 'notes',
     subject: 'Database Management',
-    url: 'https://drive.google.com/file/d/dbms',
+    url: 'https://drive.google.com/file/d/171K_LbrOrUyGmduHEh3YM-JUdiOtw_Nk/view?usp=drive_link',
     createdAt: new Date().toISOString()
   },
   {
@@ -118,7 +105,7 @@ export const samplePDFResources: PDFResource[] = [
     name: 'Operating System Notes',
     category: 'notes',
     subject: 'Operating Systems',
-    url: 'https://drive.google.com/file/d/os',
+    url: 'https://drive.google.com/file/d/1olCSvkTzRq56b6r5lZgBnGpH48z1PClW/view?usp=drive_link',
     createdAt: new Date().toISOString()
   },
   {
@@ -150,7 +137,7 @@ export const samplePDFResources: PDFResource[] = [
     name: 'Java Interview Questions',
     category: 'notes',
     subject: 'Java',
-    url: 'https://drive.google.com/file/d/java',
+    url: 'https://drive.google.com/file/d/1GHQ4pPoeplM2L5qvrWr5rKkroI-Jaoxz/view?usp=drive_link',
     createdAt: new Date().toISOString()
   },
   {
@@ -158,16 +145,9 @@ export const samplePDFResources: PDFResource[] = [
     name: 'SQL Interview Cheat Sheet',
     category: 'notes',
     subject: 'SQL',
-    url: 'https://drive.google.com/file/d/sql',
+    url: 'https://drive.google.com/file/d/1ImsXtcYwFAwMImt87l7HUdD3u_hM9H2S/view?usp=drive_link',
     createdAt: new Date().toISOString()
   },
-  {
-    id: '10',
-    name: 'My Resume',
-    category: 'resume',
-    url: 'https://drive.google.com/file/d/resume',
-    createdAt: new Date().toISOString()
-  }
 ];
 
 /* =======================
@@ -205,36 +185,51 @@ export const sampleInterviewExperiences: InterviewExperience[] = [
    PROJECTS
    ======================= */
 
+
+
 export const sampleProjects: Project[] = [
   {
     id: '1',
     name: 'E-Commerce Platform',
-    description:
-      'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    overview:
+      'A full-stack e-commerce platform that allows users to browse products, add them to cart, and securely complete payments.',
+    flow:
+      'Users sign up and log in using JWT authentication. Products are fetched from the backend and displayed on the frontend. Cart state is managed on the client, and Stripe handles secure payment processing.',
+    features:
+      'User authentication, product listing, cart management, Stripe payment integration, order history.',
     githubUrl: 'https://github.com/username/ecommerce',
     liveUrl: 'https://myecommerce.com',
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   },
   {
     id: '2',
     name: 'Task Management App',
-    description:
-      'A collaborative task management application with real-time updates and team features.',
     techStack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    overview:
+      'A collaborative task management application designed for teams to track tasks and progress efficiently.',
+    flow:
+      'Users authenticate and create teams. Tasks are created and assigned to team members. Real-time updates ensure everyone sees changes instantly.',
+    features:
+      'Team collaboration, task assignment, real-time updates, role-based access.',
     githubUrl: 'https://github.com/username/taskapp',
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   },
   {
     id: '3',
     name: 'ML Image Classifier',
-    description:
-      'A machine learning project that classifies images using TensorFlow and deploys via Flask API.',
     techStack: ['Python', 'TensorFlow', 'Flask', 'Docker'],
+    overview:
+      'A machine learning application that classifies images using a trained deep learning model.',
+    flow:
+      'Images are sent to a Flask API, processed by a TensorFlow model, and predictions are returned to the client.',
+    features:
+      'Image classification, REST API, Dockerized deployment.',
     githubUrl: 'https://github.com/username/ml-classifier',
-    createdAt: new Date().toISOString()
-  }
+    createdAt: new Date().toISOString(),
+  },
 ];
+
 
 /* =======================
    HR QUESTIONS
