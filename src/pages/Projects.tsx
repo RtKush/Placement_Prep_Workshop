@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Github, Youtube, ExternalLink, Plus, Trash2, ArrowUp, ArrowDown } from 'lucide-react';
+import { Github, Youtube, ExternalLink, Plus, Trash2, ArrowUp, ArrowDown, Edit } from 'lucide-react';
 import {
   Dialog,
   DialogTrigger,
@@ -40,6 +40,7 @@ export default function Projects() {
   ]);
 
   const [open, setOpen] = useState(false);
+  const [editOpen, setEditOpen] = useState(false);
   const [name, setName] = useState('');
   const [techStack, setTechStack] = useState('');
   const [overview, setOverview] = useState('');
@@ -54,6 +55,7 @@ export default function Projects() {
     answer: string;
     imageUrl?: string;
   }[]>([]);
+  const [editingId, setEditingId] = useState<string | null>(null);
   
 
   function resetForm() {
@@ -96,6 +98,53 @@ export default function Projects() {
     setProjects((prev) => [newProject, ...(prev || [])]);
     resetForm();
     setOpen(false);
+  }
+
+  function handleEditSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!editingId) return;
+
+    setProjects((prev) =>
+      (prev || []).map((p) =>
+        p.id === editingId
+          ? {
+              ...p,
+              name: name || p.name,
+              techStack: techStack
+                .split(',')
+                .map((t) => t.trim())
+                .filter(Boolean),
+              overview,
+              flow,
+              features,
+              githubUrl: githubUrl || undefined,
+              liveUrl: liveUrl || undefined,
+              youtubeUrl: youtubeUrl || undefined,
+              qa: qaItems.length
+                ? qaItems.map((q) => ({ id: q.id, question: q.question, answer: q.answer, imageUrl: q.imageUrl || undefined }))
+                : undefined,
+            }
+          : p
+      )
+    );
+
+    setEditingId(null);
+    resetForm();
+    setEditOpen(false);
+  }
+
+  function openEdit(project: Project) {
+    setEditingId(project.id);
+    setName(project.name || '');
+    setTechStack((project.techStack || []).join(', '));
+    setOverview(project.overview || '');
+    setFlow(project.flow || '');
+    setFeatures(project.features || '');
+    setGithubUrl(project.githubUrl || '');
+    setLiveUrl(project.liveUrl || '');
+    setYoutubeUrl(project.youtubeUrl || '');
+    setQaItems(project.qa ? project.qa.map((q) => ({ id: q.id, question: q.question, answer: q.answer, imageUrl: q.imageUrl || '' })) : []);
+    setEditOpen(true);
   }
 
   function addQa() {
@@ -268,18 +317,32 @@ export default function Projects() {
                 </div>
 
                 <div className="flex-shrink-0">
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (confirm(`Delete project "${project.name}"? This cannot be undone.`)) {
-                        setProjects((prev) => (prev || []).filter((p) => p.id !== project.id));
-                      }
-                    }}
-                    className="inline-flex items-center gap-2 rounded-md px-3 py-1 text-sm font-medium bg-destructive text-destructive-foreground hover:opacity-90"
-                  >
-                    <Trash2 size={14} /> Delete
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openEdit(project);
+                      }}
+                      className="inline-flex items-center gap-2 rounded-md px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground hover:opacity-90"
+                      aria-label={`Edit ${project.name}`}
+                    >
+                      <Edit size={14} /> Edit
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (confirm(`Delete project "${project.name}"? This cannot be undone.`)) {
+                          setProjects((prev) => (prev || []).filter((p) => p.id !== project.id));
+                        }
+                      }}
+                      className="inline-flex items-center gap-2 rounded-md px-3 py-1 text-sm font-medium bg-destructive text-destructive-foreground hover:opacity-90"
+                    >
+                      <Trash2 size={14} /> Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             </AccordionTrigger>
@@ -372,6 +435,111 @@ export default function Projects() {
           </AccordionItem>
         ))}
       </Accordion>
+      {/* Edit Dialog */}
+      <Dialog open={editOpen} onOpenChange={setEditOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Edit Project</DialogTitle>
+            <DialogDescription>Update project details below.</DialogDescription>
+          </DialogHeader>
+
+          <div className="mt-4">
+            <div className="max-h-[70vh] overflow-auto pr-2">
+              <form onSubmit={handleEditSubmit} className="space-y-3">
+                <div>
+                  <label className="text-sm font-medium">Project Name</label>
+                  <Input value={name} onChange={(e) => setName(e.target.value)} required />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Tech Stack (comma separated)</label>
+                  <Input value={techStack} onChange={(e) => setTechStack(e.target.value)} placeholder="React, Node.js, MongoDB" />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Overview</label>
+                  <Textarea value={overview} onChange={(e) => setOverview(e.target.value)} />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Internal Flow</label>
+                  <Textarea value={flow} onChange={(e) => setFlow(e.target.value)} />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Key Features</label>
+                  <Textarea value={features} onChange={(e) => setFeatures(e.target.value)} />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">GitHub URL</label>
+                  <Input value={githubUrl} onChange={(e) => setGithubUrl(e.target.value)} placeholder="https://github.com/username/repo" />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Live URL</label>
+                  <Input value={liveUrl} onChange={(e) => setLiveUrl(e.target.value)} placeholder="https://app.example.com" />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">YouTube / Demo URL</label>
+                  <Input value={youtubeUrl} onChange={(e) => setYoutubeUrl(e.target.value)} placeholder="https://youtu.be/..." />
+                </div>
+
+                {/* ===== DYNAMIC Q&A (Edit modal) ===== */}
+                <div className="pt-2">
+                  <div className="flex items-center justify-between">
+                    <label className="text-sm font-medium">Q&A (optional)</label>
+                    <div>
+                      <Button type="button" size="sm" variant="secondary" onClick={addQa}>
+                        <Plus size={14} /> Add Q&A
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 mt-3">
+                    {qaItems.map((qa, idx) => (
+                      <div key={qa.id} className="p-3 border rounded-lg bg-background/50">
+                        <div className="flex items-start gap-2">
+                          <div className="flex-1">
+                            <label className="text-xs font-medium">Question</label>
+                            <Input value={qa.question} onChange={(e) => setQaItems((prev) => prev.map(p => p.id === qa.id ? { ...p, question: e.target.value } : p))} />
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            <Button size="sm" variant="ghost" onClick={() => moveUp(idx)} title="Move up"><ArrowUp size={14} /></Button>
+                            <Button size="sm" variant="ghost" onClick={() => moveDown(idx)} title="Move down"><ArrowDown size={14} /></Button>
+                            <Button size="sm" variant="destructive" onClick={() => removeQa(qa.id)} title="Remove"><Trash2 size={14} /></Button>
+                          </div>
+                        </div>
+
+                        <div className="mt-2">
+                          <label className="text-xs font-medium">Answer</label>
+                          <Textarea value={qa.answer} onChange={(e) => setQaItems((prev) => prev.map(p => p.id === qa.id ? { ...p, answer: e.target.value } : p))} />
+                        </div>
+
+                        <div className="mt-2">
+                          <label className="text-xs font-medium">Image URL (optional)</label>
+                          <Input value={qa.imageUrl} onChange={(e) => setQaItems((prev) => prev.map(p => p.id === qa.id ? { ...p, imageUrl: e.target.value } : p))} placeholder="https://.../image.png" />
+                          {qa.imageUrl && (
+                            <img src={qa.imageUrl} alt="qa" className="mt-2 max-h-48 rounded-md object-contain" />
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <DialogFooter>
+                  <div className="flex gap-2">
+                    <Button type="button" variant="outline" onClick={() => { setEditOpen(false); setEditingId(null); resetForm(); }}>Cancel</Button>
+                    <Button type="submit">Save Changes</Button>
+                  </div>
+                </DialogFooter>
+              </form>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
