@@ -59,6 +59,13 @@ export interface Project {
   liveUrl?: string;
   youtubeUrl?: string;
 
+  qa?: {
+    id: string;
+    question: string;
+    answer: string;
+    imageUrl?: string;
+  }[];
+
   createdAt: string;
 }
 

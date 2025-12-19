@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MessageSquare, Plus, Edit2, Trash2, CheckCircle, XCircle, Clock } from 'lucide-react';
+import { MessageSquare, Plus, Edit2, Trash2, CheckCircle, XCircle, Clock, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -86,6 +86,31 @@ export default function InterviewExperiences() {
   const handleDelete = (id: string) => {
     setExperiences(prev => prev.filter(exp => exp.id !== id));
   };
+
+  function formatDateShort(d?: string) {
+    if (!d) return '';
+    try {
+      return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    } catch (e) { return d; }
+  }
+
+  function buildShareMessage(exp: InterviewExperience) {
+    const resultLabel = resultConfig[exp.result]?.label || exp.result;
+    const lines: string[] = [];
+    lines.push(`${exp.company} — ${exp.role}`);
+    lines.push(`Result: ${resultLabel}`);
+    if (exp.date) lines.push(`Date: ${formatDateShort(exp.date)}`);
+    if (exp.rounds) lines.push(`Rounds: ${exp.rounds}`);
+    lines.push('');
+    lines.push('Experience:');
+    lines.push(exp.experience || '');
+    if (exp.tips) {
+      lines.push('');
+      lines.push('Tips:');
+      lines.push(exp.tips || '');
+    }
+    return lines.join('\n');
+  }
 
   return (
     <div className="space-y-6">
@@ -185,6 +210,8 @@ export default function InterviewExperiences() {
                   className="min-h-[150px]"
                   required
                 />
+
+                {/* Formalize feature removed as requested */}
               </div>
               
               <div className="space-y-2">
@@ -267,7 +294,27 @@ export default function InterviewExperiences() {
                       </div>
                     </div>
                     
-                    <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Button variant="ghost" size="icon" onClick={(e) => { e.stopPropagation();
+                        const msg = buildShareMessage(exp);
+                        const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+                        window.open(url, '_blank');
+                      }} title="Share on WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 text-emerald-400">
+                          <path fill="currentColor" d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.37 0 .01 5.36.01 12c0 2.11.55 4.18 1.6 6.02L0 24l6.18-1.59A11.94 11.94 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.5c-1.57 0-3.09-.39-4.44-1.13l-.32-.18-3.67.94.98-3.58-.21-.36A9.45 9.45 0 0 1 2.5 12C2.5 7 6.5 3 11.5 3c2.56 0 4.96.99 6.77 2.8A9.53 9.53 0 0 1 21.5 12c0 5-4 9.5-9.5 9.5z" />
+                          <path fill="currentColor" d="M17.5 14.5c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.17.2-.34.22-.63.07-.28-.15-1.18-.43-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.17-.28-.02-.43.12-.58.12-.12.28-.31.42-.46.14-.15.18-.25.28-.42.09-.17.04-.33-.02-.46-.07-.12-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.19 0-.5.07-.76.33-.26.26-1 1-1 2.44s1.03 2.84 1.17 3.04c.15.2 2.03 3.1 4.92 4.35 1.16.5 2.06.8 2.77 1.02 1.16.36 2.22.31 3.06.19.93-.14 2.86-1.17 3.26-2.29.4-1.12.4-2.09.28-2.29-.12-.2-.43-.31-.73-.46z" />
+                        </svg>
+                      </Button>
+
+                      <Button variant="ghost" size="icon" onClick={(e) => { e.stopPropagation();
+                        const subject = `Interview Experience - ${exp.company || ''} (${exp.role || ''})`;
+                        const body = buildShareMessage(exp);
+                        const mail = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mail;
+                      }} title="Share via Email">
+                        <Mail className="w-4 h-4" />
+                      </Button>
+
                       <Button variant="ghost" size="icon" onClick={(e) => { e.stopPropagation(); handleEdit(exp); }}>
                         <Edit2 className="w-4 h-4" />
                       </Button>
